@@ -37,7 +37,6 @@ def logout_view(request):
 
 @login_required
 def add_super_admin(request):
-    #curr_user = User.objects.get(id=request.user.id)
     if not request.user.is_superuser:
         JsonResponse({'message': 'Super User access is required'}, status=403)
        
